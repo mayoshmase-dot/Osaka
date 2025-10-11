@@ -1,16 +1,113 @@
 :root {
     --mainColor: #fe3173 ;
 }
-body{
-    height: 5000px;
-}
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: var(--mainColor);
 
 }
-.project .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+.hero{
+    background-image: url(../img/person.webp);
+    background-size: cover;
+
+}
+ .icon{
+    width: 35px;
+    height: 35px;
+    border: 1px #222222 solid;
+    transition: all .6s;
+    cursor: pointer;
+}
+.icon:hover{
+    border-color: #ffffff ;
+}
+
+.animation-left , .animation-right{
+    transform: translateX(0);
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.animation-left{
+animation-name: sosoleft;
+animation-duration: 2s;
+}
+.animation-right{
+    animation-name: sosoright;
+    animation-duration: 2s;
+    animation-delay: .3s;
+}
+@keyframes sosoleft{
+from {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+to{
+transform: translateX(0);
+opacity: 1;
+}
+}
+@keyframes sosoright{
+from {
+    transform: translateX(100%);
+    opacity: 1;
+}
+to{
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+.testimonial img{
+    width: 200px;
+    height: 200px;
+}
+.testimonial .carousel-indicators {
+    bottom:-50px;
+}
+.carousel-indicators [data-bs-target]{
+    background-color: #dbdbdb;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+.Project .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
 color: var(--mainColor);
 }
-.project .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+.Project .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
 color: green;
+}
+.Project .card img{
+    transition:all .5s;
+}
+.Project img:hover {
+transform: rotate(360deg) scale(1.2);
+}
+.service-icon{
+    width: 60px;
+    height: 60px;
+}
+.service-icon svg path{
+        transition: all .8s;
+
+}
+.service-card:hover .service-icon svg path{
+    fill: var(--mainColor);
+}
+.contact{
+    background-image: url('../img/color-points.webp');
+}
+.contact .form-control{
+    border:0;
+    border-bottom: 1px solid #eee;
+}
+.contact .form-control::placeholder{
+    color: white;
+}
+.contact .form-control:focus{
+    border-bottom: 1px solid var(--mainColor);
+    box-shadow: none;
+}
+.contact h3 {
+    color: var(--mainColor);
 }
